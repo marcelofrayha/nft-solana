@@ -1,0 +1,27 @@
+{
+    "price": 0.00021,
+    "number": 3,
+    "gatekeeper": null,
+    "creators": [
+      {
+        "address": "Dh9KDDGiSLGjD4SYLR2v9s7VocDyUjoiZDUbx33Abqym",
+        "share": 90
+      }
+    ],
+    "solTreasuryAccount": "Dh9KDDGiSLGjD4SYLR2v9s7VocDyUjoiZDUbx33Abqym",
+    "splTokenAccount": null,
+    "splToken": null,
+    "goLiveDate": "2022-12-12T18:00:00+00:00",  // This is to specify when your mint will go live
+    "endSettings": null,
+    "whitelistMintSettings": null,
+    "hiddenSettings": null,
+    "freezeTime": null,
+    "uploadMethod": "nft_storage", // This is to specify to use nft.storage to store your images
+    "retainAuthority": true,
+    "isMutable": true,
+    "symbol": "NB",
+    "sellerFeeBasisPoints": 1,
+    "awsConfig": null,
+    "nftStorageAuthToken": "YOUR_NFT_STORAGE_API_KEY",
+    "shdwStorageAccount": null
+  }

@@ -1,33 +1,20 @@
 import React from "react";
-import CandyMachine from "../components/CandyMachine";
 import { useWallet } from "@solana/wallet-adapter-react";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import dynamic from "next/dynamic";
 
 // Constants
 const TWITTER_HANDLE = "_buildspace";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
-const WalletDisconnectButtonDynamic = dynamic(
-    async () => (await import('@solana/wallet-adapter-react-ui')).WalletDisconnectButton,
-    { ssr: false }
-);
-const WalletMultiButtonDynamic = dynamic(
-    async () => (await import('@solana/wallet-adapter-react-ui')).WalletMultiButton,
-    { ssr: false }
-);
-
 const Home = () => {
     const wallet = useWallet();
-   // console.log(wallet.publicKey.toString());
-
     // Actions
     const renderNotConnectedContainer = () => (
         <div>
             <img src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif" alt="emoji" />
 
             <div className="button-container">
-                <WalletMultiButtonDynamic className="cta-button connect-wallet-button" />
+                <WalletMultiButton className="cta-button connect-wallet-button" />
             </div>
         </div>
     );
@@ -39,7 +26,7 @@ const Home = () => {
                     <p className="header">🍭 Candy Drop</p>
                     <p className="sub-text">NFT drop machine with fair mint</p>
                     {/* Render your connect to wallet button right here */}
-                    {wallet.publicKey ? <CandyMachine walletAddress={wallet} /> : renderNotConnectedContainer()}
+                    {wallet.publicKey ? "Hello" : renderNotConnectedContainer()}
                 </div>
 
                 <div className="footer-container">
@@ -48,7 +35,6 @@ const Home = () => {
                 </div>
             </div>
         </div>
-        
     );
 };
 

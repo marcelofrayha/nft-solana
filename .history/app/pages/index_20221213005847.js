@@ -19,7 +19,7 @@ const WalletMultiButtonDynamic = dynamic(
 
 const Home = () => {
     const wallet = useWallet();
-   // console.log(wallet.publicKey.toString());
+    console.log(wallet.publicKey.toString());
 
     // Actions
     const renderNotConnectedContainer = () => (

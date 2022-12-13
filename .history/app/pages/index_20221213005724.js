@@ -19,7 +19,7 @@ const WalletMultiButtonDynamic = dynamic(
 
 const Home = () => {
     const wallet = useWallet();
-   // console.log(wallet.publicKey.toString());
+    console.log(wallet.publicKey.toString());
 
     // Actions
     const renderNotConnectedContainer = () => (
@@ -39,7 +39,7 @@ const Home = () => {
                     <p className="header">🍭 Candy Drop</p>
                     <p className="sub-text">NFT drop machine with fair mint</p>
                     {/* Render your connect to wallet button right here */}
-                    {wallet.publicKey ? <CandyMachine walletAddress={wallet} /> : renderNotConnectedContainer()}
+                    {wallet.publicKey ? "Hello" : renderNotConnectedContainer()}
                 </div>
 
                 <div className="footer-container">

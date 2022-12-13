@@ -3,7 +3,7 @@ import { Connection, PublicKey } from "@solana/web3.js";
 import { Program, AnchorProvider, web3 } from "@project-serum/anchor";
 import { MintLayout, TOKEN_PROGRAM_ID, Token } from "@solana/spl-token";
 import { sendTransactions } from "./connection";
-import "../styles/CandyMachine.css";
+//import "./CandyMachine.css";
 import {
     candyMachineProgram,
     TOKEN_METADATA_PROGRAM_ID,
@@ -318,12 +318,12 @@ const CandyMachine = ({ walletAddress }) => {
     };
 
     return (
-        // Only show this if candyMachine and candyMachine.state is available
-        candyMachine && candyMachine.state && (
+        // Only show this if machineStats is available
+        candyMachine && (
           <div className="machine-container">
             <p>{`Drop Date: ${candyMachine.state.goLiveDateTimeString}`}</p>
             <p>{`Items Minted: ${candyMachine.state.itemsRedeemed} / ${candyMachine.state.itemsAvailable}`}</p>
-            <button className="cta-button mint-button" onClick={mintToken}>
+            <button className="cta-button mint-button" onClick={null}>
                 Mint NFT
             </button>
           </div>

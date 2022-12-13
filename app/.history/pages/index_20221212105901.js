@@ -1,7 +1,5 @@
 import React from "react";
-import CandyMachine from "../components/CandyMachine";
 import { useWallet } from "@solana/wallet-adapter-react";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import dynamic from "next/dynamic";
 
 // Constants
@@ -19,8 +17,6 @@ const WalletMultiButtonDynamic = dynamic(
 
 const Home = () => {
     const wallet = useWallet();
-   // console.log(wallet.publicKey.toString());
-
     // Actions
     const renderNotConnectedContainer = () => (
         <div>
@@ -33,13 +29,14 @@ const Home = () => {
     );
 
     return (
+        <meta http-equiv="Content-Security-Policy" content="connect-src 'ws://localhost:8080';">
         <div className="App">
             <div className="container">
                 <div className="header-container">
                     <p className="header">🍭 Candy Drop</p>
                     <p className="sub-text">NFT drop machine with fair mint</p>
                     {/* Render your connect to wallet button right here */}
-                    {wallet.publicKey ? <CandyMachine walletAddress={wallet} /> : renderNotConnectedContainer()}
+                    {wallet.publicKey ? "Hello" : renderNotConnectedContainer()}
                 </div>
 
                 <div className="footer-container">
@@ -48,7 +45,7 @@ const Home = () => {
                 </div>
             </div>
         </div>
-        
+        </meta>
     );
 };
 
